@@ -1,0 +1,32 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "email-relay-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2024-01-01",
+
+  // D1 Database binding
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "email-relay-db",
+      "database_id": "YOUR_DATABASE_ID_HERE"
+    }
+  ],
+
+  // Environment variables
+  "vars": {
+    "RELAY_DOMAIN": "relay.mcpick.link"
+  },
+
+  // Observability - logging and tracing
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+
+  // Logpush for persistent logs
+  "logpush": true
+
+  // Secrets (set via `wrangler secret put`):
+  // - API_KEY: secure API key for authentication
+}
