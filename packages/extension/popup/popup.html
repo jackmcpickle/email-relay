@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=400">
+  <title>Email Relay</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Email Relay</h1>
+      <button id="settingsBtn" class="icon-btn" title="Settings">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"></path>
+        </svg>
+      </button>
+    </header>
+
+    <div id="error" class="error hidden"></div>
+
+    <div id="stats" class="stats">
+      <div class="stat">
+        <span class="stat-value" id="totalAliases">-</span>
+        <span class="stat-label">Aliases</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="totalEmails">-</span>
+        <span class="stat-label">Emails</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="emails7d">-</span>
+        <span class="stat-label">7 days</span>
+      </div>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search aliases...">
+      <button id="createBtn" class="btn btn-primary">+ New</button>
+    </div>
+
+    <div id="aliasList" class="alias-list">
+      <div class="loading">Loading...</div>
+    </div>
+
+    <!-- Create Modal -->
+    <div id="createModal" class="modal hidden">
+      <div class="modal-content">
+        <h2>Create Alias</h2>
+        <div class="form-group">
+          <label for="domainInput">Domain</label>
+          <input type="text" id="domainInput" placeholder="example.com">
+        </div>
+        <div class="form-group">
+          <label for="labelInput">Label (optional)</label>
+          <input type="text" id="labelInput" placeholder="My Account">
+        </div>
+        <div class="modal-actions">
+          <button id="cancelCreate" class="btn">Cancel</button>
+          <button id="confirmCreate" class="btn btn-primary">Create</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>

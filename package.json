@@ -1,0 +1,15 @@
+{
+  "name": "email-relay",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm -r dev",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "db:migrate": "wrangler d1 execute email-relay-db --file=./migrations/0001_initial.sql",
+    "db:migrate:local": "wrangler d1 execute email-relay-db --local --file=./migrations/0001_initial.sql"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "wrangler": "^3.99.0"
+  }
+}
